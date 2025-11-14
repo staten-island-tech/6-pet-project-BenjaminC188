@@ -8,6 +8,11 @@ class Hero:
         self.inventory.append(item)
         print(self.inventory)
 
+    def _money(self, money):
+        self.money += money
+
+    
+
 class BankAccount:
     def __init__(self, owner, balance):
         self.owner = owner
