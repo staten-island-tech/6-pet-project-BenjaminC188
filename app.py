@@ -4,9 +4,8 @@ class Hero:
         self.money = money
         self.inventory = inventory
 
-    def buy(self, item, amount):
+    def buy(self, item):
         self.inventory.append(item)
-        self.spend(amount)
         print(self.inventory)
 
     def _money(self, money):
@@ -36,6 +35,7 @@ class Pet:
 
 Jillian = Hero("Jillian", 150, ["Potion"])
 Jillian.buy({"title": "Sword", "atk": 34})
+Jillian.spend(50)
 print(Jillian.__dict__)
 
 ben = Hero("ben", 150, ["potion"])
