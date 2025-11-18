@@ -11,7 +11,7 @@ def login(e, p):
         return "make your password over 8 characters"
     if int not in password:
         return "add a number"
-    if char in upper 
+    if upper not in password:
             return "make a letter uppercase"
     return{"email": email, "password": password}
 
