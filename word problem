@@ -1,0 +1,13 @@
+def login(e, p):
+    email = input("email")
+    password = input("Password")
+    isinstance()
+    if "@" not in email:
+        return "add a @"
+    if len(password) < 8:
+        return "make your password over 8 characters"
+    if int not in password:
+        return "add a number"
+    if char in upper 
+            return "make a letter uppercase"
+
