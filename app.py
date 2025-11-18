@@ -11,6 +11,10 @@ class Hero:
     def _money(self, money):
         self.money += money
 
+    def spend(self, amount):
+        self.money -= amount
+
+
 class BankAccount:
     def __init__(self, owner, balance):
         self.owner = owner
@@ -23,7 +27,8 @@ class BankAccount:
         print(f"{self.owner} has ${self.__balance}")
 
     def spend(self, amount):
-        self.balance -= amount
+        self.__balance -= amount
+
 
 class Pet:
     def __init__(self, name, _happiness):
@@ -35,6 +40,7 @@ class Pet:
 
     def show_status(self):
         print(f"{self.name} has {self._happiness} happiness")
+
 
 Jillian = Hero("Jillian", 150, ["Potion"])
 Jillian.buy({"title": "Sword", "atk": 34})
@@ -48,5 +54,6 @@ print(ben.__dict__)
 dog = Pet("dog", 10)
 dog.play()
 print(dog.__dict__)
+
 
 
