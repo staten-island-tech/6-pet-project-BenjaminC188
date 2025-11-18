@@ -22,6 +22,9 @@ class BankAccount:
     def show_balance(self):
         print(f"{self.owner} has ${self.__balance}")
 
+    def spend(self, amount):
+        self.balance -= amount
+
 class Pet:
     def __init__(self, name, _happiness):
         self.name = name
