@@ -1,4 +1,5 @@
 def login(email, password):
+    number = int in password
     number = False
     if not isinstance(email, str):
         return "email must be a string"
