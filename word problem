@@ -1,6 +1,4 @@
 def login(email, password):
-    number = int in password
-    number = False
     if not isinstance(email, str):
         return "email must be a string"
     if "@" not in email:
@@ -9,9 +7,9 @@ def login(email, password):
         return "password must be a string"
     if len(password) < 8:
         return "make your password over 8 characters"
-    if not isdigit.password:
+    if not any(int.isdigit()for int in password):
         return "add a number"
-    if password.isupper not in password:
+    if not any (up.isupper()for up in password):
         return "make a letter uppercase"
     return{"email": email, "password": password}
 print(login("em@il", "Password5"))
