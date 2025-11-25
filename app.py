@@ -28,6 +28,7 @@ class BankAccount:
 
     def spend(self, amount):
         self.__balance -= amount
+        print(f"{self.owner} has {self.__balance} left")
 
 
 class Pet:
@@ -54,6 +55,28 @@ print(ben.__dict__)
 dog = Pet("dog", 10)
 dog.play()
 print(dog.__dict__)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
