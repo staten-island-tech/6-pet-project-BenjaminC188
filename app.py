@@ -32,12 +32,17 @@ class BankAccount:
 
 
 class Pet:
-    def __init__(self, name, _happiness):
+    def __init__(self, name, _happiness, _energy):
         self.name = name
         self._happiness = _happiness
+        self._energy = _energy
 
     def play(self):
         self._happiness += 2
+        self._energy -= 25
+    
+    def rest(self):
+        self._energy += 10
 
     def show_status(self):
         print(f"{self.name} has {self._happiness} happiness")
@@ -52,8 +57,9 @@ ben = Hero("ben", 150, ["potion"])
 ben.buy({"title": "Sword", "atk": 34})
 print(ben.__dict__)
 
-dog = Pet("dog", 10)
+dog = Pet("dog", 10, 100)
 dog.play()
+dog.rest()
 print(dog.__dict__)
 
 
