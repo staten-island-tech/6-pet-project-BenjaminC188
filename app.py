@@ -40,6 +40,8 @@ class Pet:
     def play(self):
         self._happiness += 2
         self._energy -= 25
+        if self._energy <= 0:
+            print("your pet died")
     
     def rest(self):
         self._energy += 10
@@ -60,6 +62,10 @@ print(ben.__dict__)
 dog = Pet("dog", 10, 100)
 dog.play()
 dog.rest()
+dog.play()
+dog.play()
+dog.play()
+dog.play()
 print(dog.__dict__)
 
 
