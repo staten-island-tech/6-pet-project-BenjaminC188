@@ -29,6 +29,7 @@ class BankAccount:
     def spend(self, amount):
         self.__balance -= amount
         print(f"{self.owner} has {self.__balance} left")
+        
 
 
 class Pet:
@@ -40,14 +41,16 @@ class Pet:
     def play(self):
         self._happiness += 2
         self._energy -= 25
+        if self._energy < 25:
+            print(Pet, "needs to rest")
         if self._energy <= 0:
-            print("your pet died")
+            print(Pet, "is dead")
     
     def rest(self):
         self._energy += 10
 
     def show_status(self):
-        print(f"{self.name} has {self._happiness} happiness")
+        print(f"{self.name} has {self._happiness} happiness and {self._energy} energy")
 
 
 Jillian = Hero("Jillian", 150, ["Potion"])
@@ -62,10 +65,6 @@ print(ben.__dict__)
 dog = Pet("dog", 10, 100)
 dog.play()
 dog.rest()
-dog.play()
-dog.play()
-dog.play()
-dog.play()
 print(dog.__dict__)
 
 
