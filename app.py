@@ -47,6 +47,8 @@ class Pet:
     def rest(self):
         self._energy += 50
         self._hunger += 40
+        self._happiness -= 4
+
 
     def eat(self):
         self._hunger -= 20
@@ -54,6 +56,17 @@ class Pet:
 
     def show_status(self):
         print(f"{self.name} has {self._happiness} happiness, {self._energy} energy and {self._hunger} hunger")
+
+        if self._energy <= 0:
+            return Pet, "is tired"
+        if self._energy >= 100:
+            return Pet, "is not tired"
+        if self._hunger >= 100:
+            return Pet, "is hungry"
+        if self._hunger <= 0:
+            return Pet, "is full"
+        if self._happiness <= 0:
+            return Pet, "is depressed"
 
 
 Jillian = Hero("Jillian", 150, ["Potion"])
