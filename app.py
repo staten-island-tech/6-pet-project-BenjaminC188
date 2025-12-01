@@ -68,6 +68,7 @@ print(ben.__dict__)
 dog = Pet("dog", 10, 100, 0)
 dog.play()
 dog.rest()
+dog.eat()
 print(dog.__dict__)
 
 
