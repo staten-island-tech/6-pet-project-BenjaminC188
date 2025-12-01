@@ -47,8 +47,7 @@ class Pet:
     def rest(self):
         self._energy += 50
         self._hunger += 40
-        self._happiness -= 4
-
+        self._happiness -= 3
 
     def eat(self):
         self._hunger -= 20
