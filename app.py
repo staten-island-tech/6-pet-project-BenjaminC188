@@ -105,6 +105,35 @@ print(dog.__dict__)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 """
 class User:
     def __init__(self, name, email):
