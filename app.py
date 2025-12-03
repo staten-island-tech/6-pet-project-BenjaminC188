@@ -56,8 +56,10 @@ class Pet:
     def show_status(self):
         print(f"{self.name} has {self._happiness} happiness, {self._energy} energy and {self._hunger} hunger")
 
-        if self._energy <= 0:
+        if self._energy <= 25:
             return Pet, "is tired"
+        if self._energy <= 0:
+            return Pet, "is dead"
         if self._energy >= 100:
             return Pet, "is not tired"
         if self._hunger >= 100:
@@ -68,14 +70,14 @@ class Pet:
             return Pet, "is depressed"
 
 
-Jillian = Hero("Jillian", 150, ["Potion"])
+"""Jillian = Hero("Jillian", 150, ["Potion"])
 Jillian.buy({"title": "Sword", "atk": 34})
 Jillian.spend(50)
 print(Jillian.__dict__)
 
 ben = Hero("ben", 150, ["potion"])
 ben.buy({"title": "Sword", "atk": 34})
-print(ben.__dict__)
+print(ben.__dict__)"""
 
 dog = Pet("dog", 10, 100, 0)
 dog.play()
