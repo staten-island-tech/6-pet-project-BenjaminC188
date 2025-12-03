@@ -57,17 +57,17 @@ class Pet:
         print(f"{self.name} has {self._happiness} happiness, {self._energy} energy and {self._hunger} hunger")
 
         if self._energy <= 25:
-            return Pet, "is tired"
+            return self._name, "is tired"
         if self._energy <= 0:
-            return Pet, "is dead"
+            return self._name, "is dead"
         if self._energy >= 100:
-            return Pet, "is not tired"
+            return self._name, "is not tired"
         if self._hunger >= 100:
-            return Pet, "is hungry"
+            return self._name, "is hungry"
         if self._hunger <= 0:
-            return Pet, "is full"
+            return self._name, "is full"
         if self._happiness <= 0:
-            return Pet, "is depressed"
+            return self._name, "is depressed"
 
 
 """Jillian = Hero("Jillian", 150, ["Potion"])
@@ -86,6 +86,53 @@ dog.eat()
 print(dog.__dict__)
 
 
+class Pet:
+    def __init__(self, name, _happiness, _energy, _hunger):
+        self.name = name
+        self._happiness = _happiness
+        self._energy = _energy
+        self._hunger = _hunger
+
+    def _limit_stats(self):
+        self._happiness = max(0, min(self._happiness, 100))
+        self._energy = max(0, min(self._energy, 100))
+        self._hunger = max(0, min(self._hunger, 100))
+
+    def play(self):
+        self._happiness += 2
+        self._energy -= 25
+        self._hunger += 20
+        self._limit_stats()
+
+    def rest(self):
+        self._energy += 50
+        self._hunger += 40
+        self._happiness -= 3
+        self._limit_stats()
+
+    def eat(self):
+        self._hunger -= 20
+        self._energy += 10
+        self._limit_stats()
+
+    def show_status(self):
+        print(f"{self.name} has {self._happiness} happiness, {self._energy} energy, and {self._hunger} hunger.")
+
+        if self._energy <= 0:
+            print(f"{self.name} is dead.")
+        elif self._hunger >= 100:
+            print(f"{self.name} is starving.")
+        elif self._happiness <= 0:
+            print(f"{self.name} is depressed.")
+
+        elif self._energy <= 25:
+            print(f"{self.name} is tired.")
+        elif self._hunger <= 0:
+            print(f"{self.name} is full.")
+        elif self._energy >= 100:
+            print(f"{self.name} is not tired.")
+        else:
+            print(f"{self.name} is normal.")
 
 
 
