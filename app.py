@@ -40,6 +40,7 @@ ben = Hero("ben", 150, ["potion"])
 ben.buy({"title": "Sword", "atk": 34})
 print(ben.__dict__)"""
 
+Pet = True
 class Pet:
     def __init__(self, name, _happiness, _energy, _hunger):
         self.name = name
@@ -54,31 +55,12 @@ class Pet:
 
     def play(self):
         print(f"{self.name} is playing")
-        self._happiness += 25
-        self._energy -= 40
-        self._hunger -= 20
+        self._happiness += 15
+        self._energy -= 25
+        self._hunger -= 10
         self._status()
         print(self.__dict__)
-
-    def rest(self):
-        print(f"{self.name} is sleep")
-        self._energy += 50
-        self._hunger += 40
-        self._happiness -= 50
-        self._status()
-        print(self.__dict__)
-
-    def eat(self):
-        print(f"{self.name} is eating")
-        self._hunger += 70
-        self._energy += 10
-        self._status()
-        print(self.__dict__)
-
-    def show_status(self):
-        print(f"{self.name} has {self._happiness} happiness, {self._energy} energy, and {self._hunger} hunger.")
-        
-        if self._energy <= 0 or self._hunger <= 0 or self._happiness <= 0:
+        if self._energy == 0 or self._hunger == 0 or self._happiness == 0:
             print(f"{self.name} is dead.")
         elif self._hunger <= 20:
             print(f"{self.name} is starving.")
@@ -93,8 +75,57 @@ class Pet:
         else:
             print(f"{self.name} is normal.")
 
+    def rest(self):
+        print(f"{self.name} is sleep")
+        self._energy += 30
+        self._hunger -= 15
+        self._happiness -= 10
+        self._status()
+        print(self.__dict__)
+        if self._energy == 0 or self._hunger == 0 or self._happiness == 0:
+            print(f"{self.name} is dead.")
+        elif self._hunger <= 20:
+            print(f"{self.name} is starving.")
+        elif self._happiness <= 0:
+            print(f"{self.name} is depressed.")
+        elif self._energy <= 25:
+            print(f"{self.name} is tired.")
+        elif self._hunger >= 100:
+            print(f"{self.name} is full.")
+        elif self._energy >= 100:
+            print(f"{self.name} is not tired.")
+        else:
+            print(f"{self.name} is normal.")
+
+    def eat(self):
+        print(f"{self.name} is eating")
+        self._hunger += 20
+        self._energy += 10
+        self._status()
+        print(self.__dict__)
+        if self._energy == 0 or self._hunger == 0 or self._happiness == 0:
+            print(f"{self.name} is dead.")
+        elif self._hunger <= 20:
+            print(f"{self.name} is starving.")
+        elif self._happiness <= 0:
+            print(f"{self.name} is depressed.")
+        elif self._energy <= 25:
+            print(f"{self.name} is tired.")
+        elif self._hunger >= 100:
+            print(f"{self.name} is full.")
+        elif self._energy >= 100:
+            print(f"{self.name} is not tired.")
+        else:
+            print(f"{self.name} is normal.")
+
+    def show_status(self):
+        print(f"{self.name} has {self._happiness} happiness, {self._energy} energy, and {self._hunger} hunger.")
+        
+        
+
 dog = Pet("dog", 50, 50, 50)
 dog.play()
+dog.eat()
 dog.rest()
 dog.eat()
 dog.show_status()
